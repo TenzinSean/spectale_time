@@ -1,7 +1,11 @@
 // Import React
 import React from "react";
-
-
+import First_Page from '../components/First_Page';
+import Second_Page from '../components/Second_Page';
+import Third_Page from '../components/Third_Page';
+import Four_Page from '../components/Four_Page';
+import Five_Page from '../components/Five_Page';
+import '../presentation/index.css';
 // Import Spectacle Core tags
 import {
   BlockQuote,
@@ -11,7 +15,10 @@ import {
   ListItem,
   List,
   Quote,
+  Magic,
   Slide,
+  Notes,
+  Layout,
   Text
 } from "spectacle";
 
@@ -21,11 +28,18 @@ import createTheme from "spectacle/lib/themes/default";
 // Require CSS
 require("normalize.css");
 
+// Style for the page
+
+
+
 const theme = createTheme({
   primary: "white",
   secondary: "#1F2022",
   tertiary: "#03A9FC",
-  quarternary: "#CECECE"
+  textColor: "#c2e9fb",
+  quarternary: "#CECECE",
+  secondColor: "#f2fcfe",
+  backgColor: "#274046",
 }, {
   primary: "Montserrat",
   secondary: "Helvetica"
@@ -35,48 +49,35 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Welcome To Refugee Linkiden
+        <Slide transition={["zoom"]} bgColor="backgColor" className="first-page1" bgSize="cover" bgDarken= "0.60" bgImage="http://cdn3.spiegel.de/images/image-1140116-860_poster_16x9-lrhh-1140116.jpg">
+          <Heading size={2} fit caps lineHeight={2} textColor="#fff">
+            Welcome To Refugee LinkedIn
           </Heading>
-          <Text margin="30px 0 0" textColor="tertiary" size={1} fit bold >
-            ReJobs
-          </Text>
+          <First_Page/>
           <ul>
-            <li>Founder - Tenzin Sean & Rasul</li>
+            <li>Founder - Tenzin Sean & Rasul From POWERCODERS</li>
           </ul>
         </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>Typography</Heading>
-          <Heading size={1} textColor="secondary">Heading 1</Heading>
-          <Heading size={2} textColor="secondary">Heading 2</Heading>
-          <Heading size={3} textColor="secondary">Heading 3</Heading>
-          <Heading size={4} textColor="secondary">Heading 4</Heading>
-          <Heading size={5} textColor="secondary">Heading 5</Heading>
-          <Text size={6} textColor="secondary">Standard text</Text>
+        <Slide transition={["fade"]} bgColor="backgColor" padding="20px">
+          <Second_Page/>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Standard List</Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
+        <Slide transition={["fade"]} bgColor="backgColor" padding="20px">
+          <Third_Page />
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Standard List</Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
+        <Slide transition={["fade"]} bgColor="backgColor" textColor="tertiary">
+          <Heading size={2} fit caps lineHeight={0} textColor="#fff" margin="10px 0px 10px 0px">
+            Our Prototype
+          </Heading>
+          <Four_Page/>
+
         </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+        <Slide transition={["fade"]} bgColor="backgColor" textColor="tertiary">
+          <Five_Page/>
+        </Slide>
+        <Slide transition={["fade"]} bgSize="cover" bgDarken= "0.40" bgImage="https://media.giphy.com/media/kHrWKmyLICrCM/giphy.gif" textColor="primary">
           <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
+            <Quote textSize="45px">Thank you</Quote>
+            <Cite textSize="30px" textColor="#fff" padding="25px">Tenzin Sean & Rashul from POWERCODERS</Cite>
           </BlockQuote>
         </Slide>
       </Deck>
